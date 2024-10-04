@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Agenda Completa con Menú Deslizable</title>
+</head>
+<body>
+    <!-- Menú Deslizable -->
+    <div id="sidebar" class="sidebar">
+        <button id="cerrar-menu" class="cerrar-menu">&times;</button>
+        <h2>Bienvenido, Usuario</h2>
+        <ul>
+            <li><a href="#" onclick="mostrarSeccion('agenda-semanal')">Agenda Semanal</a></li>
+            <li><a href="#" onclick="mostrarSeccion('agenda-personal')">Agenda de Telemarketing</a></li>
+            <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+            <li><a href="#" onclick="mostrarSeccion('notas')">Notas</a></li>
+                      <li><a href="#" onclick="mostrarSeccion('calculadora')">Calculadora</a></li>
+                                <li><a href="#" onclick="mostrarSeccion('padlet-negocio')">Padlet de negocio</a></li>
+            <li><a href="#" onclick="mostrarSeccion('padlet')">Padlet de inducción</a></li>
+                                         <li><a href="#" onclick="mostrarSeccion('recursos')">Recursos</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="contenido-principal">
+        <button id="abrir-menu" class="abrir-menu">&#9776; Menú</button>
+        
+        <!-- Sección de Agenda Semanal -->
+        <div id="agenda-semanal" class="seccion">
+            <h1>Agenda de demostraciones</h1>
+            <table id="tabla-agenda">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Turno</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sábado</th>
+                        <th>Domingo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Nombre"></td>
+                        <td>
+                            <select>
+                                <option>Desayuno</option>
+                                <option>Almuerzo</option>
+                                <option>Cena</option>
+                            </select>
+                        </td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                        <td><input type="text" placeholder="Actividad"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="agregar-fila">+</button>
+        </div>
+
+        <!-- Sección de Agenda Personal -->
+        <div id="agenda-personal" class="seccion" style="display:none;">
+            <h1>Agenda de Telemarketing</h1>
+
+            <table id="tabla-personal">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Teléfono</th>
+                        <th>Estado</th>
+                        <th>Fecha de activación</th>
+                      <th>Referidor</th>
+                      <th>Relación con referidor</th>
+                      <th>Localidad</th>
+                      <th>Información adicional para el telemarketing</th>
+                      <th>Estado del contacto</th>
+                      <th>Fecha de próximo contacto</th>
+                      <th>Novedades de telemarketing</th>
+                      <th>Fecha, hora y dirección demo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Nombre"></td>
+                        <td><input type="text" placeholder="Teléfono"></td>
+                        <td><select name="estado" id="estado">
+    <option value="activado">Activado</option>
+    <option value="sin_activar">Sin activar</option>
+</select>
+                               <td><input type="text" placeholder="Fecha"></td>
+</td>
+                   <td><input type="text" placeholder="Nombre de referidor"></td>
+                   <td><input type="text" placeholder="Relación con referidor"></td>
+                   <td><input type="text" placeholder="Ciudad"></td>
+                   <td><input type="text" placeholder="Información adicional"></td>
+                   <td><input type="text" placeholder="Estado del contacto"></td>
+                   <td><input type="text" placeholder="Fecha"></td>
+                   <td><input type="text" placeholder="Novedades"></td>
+                        <td><input type="text" placeholder="Fecha"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="agregar-fila-personal">Agregar Persona</button>
+        </div>
+
+        <!-- Sección de Calculadora -->
+        <div id="calculadora" class="seccion" style="display:none;">
+            <h1>Calculadora</h1>
+            <p><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Royal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 400px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result div {
+            margin: 5px 0;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 10px;
+            width: 290px;
+            height: 140px;
+        }
+    </style>
+</head>
+<body>
+
+           <button onclick="resetearPagina()">⟳ Borrar todo</button>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Dinámica con Total</title>
+    <style>
+        .input-container {
+            margin-bottom: 10px;
+        }
+        #total {
+            margin-top: 10px;
+        }
+    </style>
+
+
+    <div id="container">
+        <div class="input-container">
+            <label for="search1">Busca una opción:</label>
+            <input type="text" id="search1" name="search" list="options-list1" oninput="updateTotal()">
+              <button class="borrar" onclick="limpiarCampo('search1')">X</button>
+            <datalist id="options-list1">
+                <!-- opciones -->
+                <option value="15 pcs. - 4.180.000" data-value="4180000"></option>
+                <option value="10 pcs. - 3.080.000" data-value="3080000"></option>
+                <option value="8 pcs. - 2.460.000" data-value="2460000"></option>
+                <option value="7 pcs. - 1.800.000" data-value="1800000"></option>
+                <option value="5 pcs. Complementario - 1.500.000" data-value="1500000"></option>
+                <option value="5 pcs. esencial - 1.340.000" data-value="1340000"></option>
+                <option value="Olla de 30lts. con tapa - 1.250.000" data-value="1250000"></option>
+<option value="Olla de 20lts. con tapa - 1.000.000" data-value="1000000"></option>
+<option value="Olla 12lts. con tapa - 895.000" data-value="895000"></option>
+<option value="Olla 8lts. con tapa - 765.000" data-value="765000"></option>
+<option value="Olla 6lts. con tapa - 730.000" data-value="730000"></option>
+<option value="Olla 4lts. con tapa - 580.000" data-value="580000"></option>
+<option value="Olla 3lts. con tapa - 520.000" data-value="520000"></option>
+<option value="Olla 2lts. con tapa - 478.000" data-value="478000"></option>
+<option value="Olla de 1.5 Qts. con tapa - 435.000" data-value="435000"></option>
+<option value="Olla de presión c/reloj 6 litros - 935.000" data-value="935000"></option>
+<option value="Olla de presión c/reloj 10 litros - 1.130.000" data-value="1130000"></option>
+<option value="Pavera Ovalada Royal Prestige - 1.000.000" data-value="1000000"></option>
+<option value="Paellera de 14” - 830.000" data-value="830000"></option>
+<option value="Paellera de 10” RP - 560.000" data-value="560000"></option>
+<option value="Sartén de 26cm c.tapa - 690.000" data-value="690000"></option>
+<option value="Sartén de 20cm c.tapa - 515.000" data-value="515000"></option>
+<option value="Juego de Sartenes Gourmet 4 pza - 980.000" data-value="980000"></option>
+<option value="Sartén Gourmet de 10” c.tapa - 550.000" data-value="550000"></option>
+<option value="Sartén Gourmet de 8” c.tapa - 477.000" data-value="477000"></option>
+<option value="Juego Easy Release 6 piezas - 2.190.000" data-value="2190000"></option>
+<option value="Sartén Easy Release 10” c.tapa - 720.000" data-value="720000"></option>
+<option value="Sartén Easy Release 12” c.tapa - 926.000" data-value="926000"></option>
+<option value="Maxtractor - 1.860.000" data-value="1860000"></option>
+<option value="Tapa Pequeña 16cm - 140.000" data-value="140000"></option>
+<option value="Tapa Mediana 20cm. - 160.000" data-value="160000"></option>
+<option value="Tapa Grande 26cm. - 207.000" data-value="207000"></option>
+<option value="Tapa Alta 26cm. - 480.000" data-value="480000"></option>
+<option value="Colador Pequeño 20cm. - 345.000" data-value="345000"></option>
+<option value="Colador Grande 26cm. - 440.000" data-value="440000"></option>
+<option value="Plancha Doble RP - 570.000" data-value="570000"></option>
+<option value="Parrilla Redonda RP - 480.000" data-value="480000"></option>
+<option value="Plancha Sencilla RP - 440.000" data-value="440000"></option>
+<option value="Destapador Precision Series - 52.000" data-value="52000"></option>
+<option value="Rallador Precision Series - 55.000" data-value="55000"></option>
+<option value="Batidor de Globo Precisión Series - 66.000" data-value="66000"></option>
+<option value="Cortapizza Precisión Series - 61.000" data-value="61000"></option>
+<option value="Pelador - 51.000" data-value="51000"></option>
+<option value="Base Magnética - 55.000" data-value="55000"></option>
+<option value="Espátula Precisión Series - 60.000" data-value="60000"></option>
+<option value="Nvo Juego p/servir DELUXE - 46.000" data-value="46000"></option>
+<option value="Nvo Juego p/servir COMPLEMENTARIO - 42.000" data-value="42000"></option>
+<option value="JUEGO Cubiertos American 24 Pza - 165.000" data-value="165000"></option>
+<option value="Chocolatera RP - 450.000" data-value="450000"></option>
+<option value="Expertea - 695.000" data-value="695000"></option>
+<option value="Hervidor 900 ml. - 175.000" data-value="175000"></option>
+<option value="Hervidor 450 ml. - 147.000" data-value="147000"></option>
+<option value="Tazones 4 - 260.000" data-value="260000"></option>
+<option value="Tazones 2 - 128.000" data-value="128000"></option>
+<option value="Coladores Maxtractor - 389.000" data-value="389000"></option>
+<option value="Cafetera Expresso 10 tazas - 340.000" data-value="340000"></option>
+<option value="Cafetera Expresso 4 tazas - 210.000" data-value="210000"></option>
+<option value="Cartucho (Financiado) - 500.000" data-value="500000"></option>
+<option value="Cartucho (De contado) - 300.000" data-value="300000"></option>
+<option value="Cacerola para huevos - 590.000" data-value="590000"></option>
+<option value="RP ALL-IN-ONE BLOQUE COMPLETO - 1.430.000" data-value="1430000"></option>
+<option value="Juego de cuchillo para carne 4pza. - 235.000" data-value="235000"></option>
+<option value="Juego de cuchillos 5 piezas - 530.000" data-value="530000"></option>
+<option value="RP Tenedor para trinchar 6 Pulgadas - 195.000" data-value="195000"></option>
+<option value="RP Cuchillo para trinchar - 190.000" data-value="190000"></option>
+<option value="Afilador (Chaira) - 82.000" data-value="82000"></option>
+<option value="Tijeras Precisión - 180.000" data-value="180000"></option>
+<option value="Cuchillo Santoku 5 Pulgadas - 45.000" data-value="45000"></option>
+<option value="RP Hacha - 190.000" data-value="190000"></option>
+<option value="RP Cuchillo multiuso 5 Pulgadas - 180.000" data-value="180000"></option>
+<option value="RP Cuchillo para pelar 2.75 Pulgadas - 160.000" data-value="160000"></option>
+<option value="Tabla de bambú grande - 100.000" data-value="100000"></option>
+<option value="Tabla de bambú pequeña - 79.000" data-value="79000"></option>
+                <!-- mas opciones aca -->
+            </datalist>
+            <button onclick="addSearch()">+</button>
+        </div>
+    </div>
+    
+    <div id="total">
+        <label for="totalValue">Total:</label>
+        <input type="number" id="totalValue" name="totalValue" readonly="">
+    </div>
+
+    <script>
+        const options = [
+    { text: "15 pcs. - 4.180.000", value: 4180000 },
+    { text: "10 pcs. - 3.080.000", value: 3080000 },
+    { text: "8 pcs. - 2.460.000", value: 2460000 },
+    { text: "7 pcs. - 1.800.000", value: 1800000 },
+    { text: "5 pcs. Complementario - 1.500.000", value: 1500000 },
+    { text: "5 pcs. esencial - 1.340.000", value: 1340000 },
+    { text: "Olla de 30lts. con tapa - 1.250.000", value: 1250000 },
+    { text: "Olla de 20lts. con tapa - 1.000.000", value: 1000000 },
+    { text: "Olla 12lts. con tapa - 895.000", value: 895000 },
+    { text: "Olla 8lts. con tapa - 765.000", value: 765000 },
+    { text: "Olla 6lts. con tapa - 730.000", value: 730000 },
+    { text: "Olla 4lts. con tapa - 580.000", value: 580000 },
+    { text: "Olla 3lts. con tapa - 520.000", value: 520000 },
+    { text: "Olla 2lts. con tapa - 478.000", value: 478000 },
+    { text: "Olla de 1.5 Qts. con tapa - 435.000", value: 435000 },
+    { text: "Olla de presión c/reloj 6 litros - 935.000", value: 935000 },
+    { text: "Olla de presión c/reloj 10 litros - 1.130.000", value: 1130000 },
+    { text: "Pavera Ovalada Royal Prestige - 1.000.000", value: 1000000 },
+    { text: "Paellera de 14” - 830.000", value: 830000 },
+    { text: "Paellera de 10” RP - 560.000", value: 560000 },
+    { text: "Sartén de 26cm c.tapa - 690.000", value: 690000 },
+    { text: "Sartén de 20cm c.tapa - 515.000", value: 515000 },
+    { text: "Juego de Sartenes Gourmet 4 pza - 980.000", value: 980000 },
+    { text: "Sartén Gourmet de 10” c.tapa - 550.000", value: 550000 },
+    { text: "Sartén Gourmet de 8” c.tapa - 477.000", value: 477000 },
+    { text: "Juego Easy Release 6 piezas - 2.190.000", value: 2190000 },
+    { text: "Sartén Easy Release 10” c.tapa - 720.000", value: 720000 },
+    { text: "Sartén Easy Release 12” c.tapa - 926.000", value: 926000 },
+    { text: "Maxtractor - 1.860.000", value: 1860000 },
+    { text: "Tapa Pequeña 16cm - 140.000", value: 140000 },
+    { text: "Tapa Mediana 20cm. - 160.000", value: 160000 },
+    { text: "Tapa Grande 26cm. - 207.000", value: 207000 },
+    { text: "Tapa Alta 26cm. - 480.000", value: 480000 },
+    { text: "Colador Pequeño 20cm. - 345.000", value: 345000 },
+    { text: "Colador Grande 26cm. - 440.000", value: 440000 },
+    { text: "Plancha Doble RP - 570.000", value: 570000 },
+    { text: "Parrilla Redonda RP - 480.000", value: 480000 },
+    { text: "Plancha Sencilla RP - 440.000", value: 440000 },
+    { text: "Destapador Precision Series - 52.000", value: 52000 },
+    { text: "Rallador Precision Series - 55.000", value: 55000 },
+    { text: "Batidor de Globo Precisión Series - 66.000", value: 66000 },
+    { text: "Cortapizza Precisión Series - 61.000", value: 61000 },
+    { text: "Pelador - 51.000", value: 51000 },
+    { text: "Base Magnética - 55.000", value: 55000 },
+    { text: "Espátula Precisión Series - 60.000", value: 60000 },
+    { text: "Nvo Juego p/servir DELUXE - 46.000", value: 46000 },
+    { text: "Nvo Juego p/servir COMPLEMENTARIO - 42.000", value: 42000 },
+    { text: "JUEGO Cubiertos American 24 Pza - 165.000", value: 165000 },
+    { text: "Chocolatera RP - 450.000", value: 450000 },
+    { text: "Expertea - 695.000", value: 695000 },
+    { text: "Hervidor 900 ml. - 175.000", value: 175000 },
+    { text: "Hervidor 450 ml. - 147.000", value: 147000 },
+    { text: "Tazones 4 - 260.000", value: 260000 },
+    { text: "Tazones 2 - 128.000", value: 128000 },
+    { text: "Coladores Maxtractor - 389.000", value: 389000 },
+    { text: "Cafetera Expresso 10 tazas - 340.000", value: 340000 },
+    { text: "Cafetera Expresso 4 tazas - 210.000", value: 210000 },
+    { text: "Cartucho (Financiado) - 500.000", value: 500000 },
+    { text: "Cartucho (De contado) - 300.000", value: 300000 },
+    { text: "Cacerola para huevos - 590.000", value: 590000 },
+    { text: "RP ALL-IN-ONE BLOQUE COMPLETO - 1.430.000", value: 1430000 },
+    { text: "Juego de cuchillo para carne 4pza. - 235.000", value: 235000 },
+    { text: "Juego de cuchillos 5 piezas - 530.000", value: 530000 },
+    { text: "RP Tenedor para trinchar 6 Pulgadas - 195.000", value: 195000 },
+    { text: "RP Cuchillo para trinchar - 190.000", value: 190000 },
+    { text: "Afilador (Chaira) - 82.000", value: 82000 },
+    { text: "Tijeras Precisión - 180.000", value: 180000 },
+    { text: "Cuchillo Santoku 5 Pulgadas - 45.000", value: 45000 },
+    { text: "RP Hacha - 190.000", value: 190000 },
+    { text: "RP Cuchillo multiuso 5 Pulgadas - 180.000", value: 180000 },
+    { text: "RP Cuchillo para pelar 2.75 Pulgadas - 160.000", value: 160000 },
+    { text: "Tabla de bambú grande - 100.000", value: 100000 },
+    { text: "Tabla de bambú pequeña - 79.000", value: 79000 },
+          {}
+            // mas opciones aca
+        ];
+        // Función para transferir el valor de 'valor1' a 'valor2'
+        function transferirValor() {
+            // Obtener el valor del primer campo
+            const valor1 = document.getElementById('totalValue').value;
+
+          
+            // Pasar el valor del campo 'valor1' a 'valor2'
+            document.getElementById('precioVenta').value = valor1;
+        }
+  
+        function addSearch() {
+            const container = document.getElementById('container');
+            const newInputContainer = document.createElement('div');
+            newInputContainer.className = 'input-container';
+
+            const newId = container.children.length + 1;
+            newInputContainer.innerHTML = `
+                <label for="search${newId}">Busca una opción:</label>
+                <input type="text" id="search${newId}" name="search" list="options-list${newId}" oninput="updateTotal()">
+                <datalist id="options-list${newId}">
+                    <!-- Opciones aquí -->
+                    ${options.map(option => `<option value="${option.text}" data-value="${option.value}"></option>`).join('')}
+                </datalist>
+                        <button class="borrar" onclick="limpiarCampo('search${newId}')">X</button>
+                <button onclick="addSearch()">+</button>
+            `;
+
+            container.appendChild(newInputContainer);
+        }
+
+        function updateTotal() {
+            let total = 0;
+            const inputs = document.querySelectorAll('input[list]');
+            inputs.forEach(input => {
+                const selectedOption = [...input.list.options].find(option => option.value === input.value);
+                if (selectedOption) {
+                    total += parseInt(selectedOption.getAttribute('data-value'), 10);
+                }
+            });
+            document.getElementById('totalValue').value = total;
+        }
+    </script>
+
+
+
+    <label for="precioVenta">Precio de Venta:<button class="transferir" onclick="transferirValor()">↑↓</button></label>
+    <input type="number" id="precioVenta" placeholder="Ingrese el precio de venta">
+    
+    <label for="anticipo">Anticipo:        <button class="boton-porcentaje" onclick="calcularPorcentaje(10)">10%</button>
+        <button class="boton-porcentaje" onclick="calcularPorcentaje(20)">20%</button>
+        <button class="boton-porcentaje" onclick="calcularPorcentaje(30)">30%</button></label>
+    <input type="number" id="anticipo" placeholder="Ingrese el anticipo">
+    
+    <button onclick="calcular()">Calcular</button>
+    
+    <div id="resultados" class="result"></div>
+    
+    <script>
+        // Función para calcular saldo a financiar y cuotas
+        function calcular() {
+            const precioVenta = parseFloat(document.getElementById('precioVenta').value);
+            const anticipo = parseFloat(document.getElementById('anticipo').value);
+            
+            if (isNaN(precioVenta) || isNaN(anticipo)) {
+                alert("Por favor, ingrese valores válidos en las casillas.");
+                return;
+            }
+            
+            const saldoAFinanciar = precioVenta - anticipo;
+            const coeficientes = {
+                "3 cuotas": 39.07,
+                "6 cuotas": 21.88,
+                "9 cuotas": 16.26,
+                "12 cuotas": 13.53,
+                "14 cuotas": 12.40,
+                "18 cuotas": 10.90
+            };
+            
+            let resultadosHTML = `<div><strong>Saldo a Financiar:</strong> ${saldoAFinanciar.toFixed(2)}</div>`;
+            
+            for (let cuotas in coeficientes) {
+                const resultado = saldoAFinanciar * (coeficientes[cuotas] / 100);
+                resultadosHTML += `<div><strong>${cuotas}:</strong> <span class="resultado" data-valor="${resultado.toFixed(2)}">${resultado.toFixed(2)}</span></div>`;
+            }
+            
+            document.getElementById('resultados').innerHTML = resultadosHTML;
+        }
+
+        // Función para convertir los resultados a dólares *** esta funcion la elimine
+        function convertirADolares() {
+            const tasaDolar = parseFloat(document.getElementById('tasaDolar').value);
+
+            if (isNaN(tasaDolar) || tasaDolar <= 0) {
+                alert("Por favor, ingresa una tasa de conversión válida.");
+                return;
+            }
+
+            // Seleccionar todos los resultados generados previamente
+            const resultados = document.querySelectorAll('.resultado');
+
+            resultados.forEach(resultado => {
+                const valorOriginal = parseFloat(resultado.getAttribute('data-valor'));
+                const valorDolarizado = valorOriginal / tasaDolar;
+                resultado.textContent = valorDolarizado.toFixed(2); // Actualizar el texto con el valor dolarizado
+            });
+        }
+    </script>
+  
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Inverso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 400px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result div {
+            margin: 5px 0;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 10px;
+            width: 250px;
+            height: 128px;
+        }
+    </style>
+
+
+
+    <h1>Cálculo Inverso</h1>
+    <label for="amount">Búsqueda de cuota adecuada a un presupuesto:</label>
+    <input type="number" id="amount" placeholder="Cuota de hasta">
+    <button onclick="calculate()">Calcular</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const productos = [
+            {nombre: "Olla 12 Litros", anticipo: 89500, cuotas: [{cuotas: 14, monto: 99882}, {cuotas: 18, monto: 87800}]},
+            {nombre: "Paellera 14\"", anticipo: 83000, cuotas: [{cuotas: 12, monto: 101069}, {cuotas: 14, monto: 92628}, {cuotas: 18, monto: 81423}]},
+            {nombre: "Olla 8 Litros", anticipo: 76500, cuotas: [{cuotas: 12, monto: 93194}, {cuotas: 14, monto: 85374}, {cuotas: 18, monto: 75047}]},
+            {nombre: "Olla 6 Litros", anticipo: 73000, cuotas: [{cuotas: 12, monto: 88892}, {cuotas: 14, monto: 81468}, {cuotas: 18, monto: 71613}]},
+            {nombre: "Sartén 26cm", anticipo: 69000, cuotas: [{cuotas: 9, monto: 100975}, {cuotas: 12, monto: 84021}, {cuotas: 14, monto: 77004}, {cuotas: 18, monto: 67689}]},
+            {nombre: "Olla 4 Litros", anticipo: 58000, cuotas: [{cuotas: 9, monto: 84877}, {cuotas: 12, monto: 70627}, {cuotas: 14, monto: 64728}, {cuotas: 18, monto: 56898}]},
+            {nombre: "Paellera 10\"", anticipo: 56000, cuotas: [{cuotas: 9, monto: 81950}, {cuotas: 12, monto: 68191}, {cuotas: 14, monto: 62496}, {cuotas: 18, monto: 54936}]},
+            {nombre: "Olla 3 Litros", anticipo: 52000, cuotas: [{cuotas: 9, monto: 76097}, {cuotas: 12, monto: 63320}, {cuotas: 14, monto: 58032}, {cuotas: 18, monto: 51012}]},
+            {nombre: "Sartén 20cm", anticipo: 51500, cuotas: [{cuotas: 6, monto: 101414}, {cuotas: 9, monto: 75365}, {cuotas: 12, monto: 62712}, {cuotas: 14, monto: 57474}, {cuotas: 18, monto: 50522}]},
+            {nombre: "Olla 2 Litros", anticipo: 47800, cuotas: [{cuotas: 6, monto: 94128}, {cuotas: 9, monto: 69951}, {cuotas: 12, monto: 58206}, {cuotas: 14, monto: 53345}, {cuotas: 18, monto: 46892}]},
+            {nombre: "Olla 1.5 Qts.", anticipo: 43500, cuotas: [{cuotas: 6, monto: 85660}, {cuotas: 9, monto: 63658}, {cuotas: 12, monto: 52970}, {cuotas: 14, monto: 48546}, {cuotas: 18, monto: 42674}]}
+        ];
+
+        function calculate() {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = ''; // Limpiar resultados anteriores
+
+            if (isNaN(amount)) {
+                resultDiv.innerHTML = '<p>Por favor, ingresa un número válido.</p>';
+                return;
+            }
+
+            productos.forEach(producto => {
+                let mostrarProducto = false;
+                let productoHTML = `<div class="product"><h2>${producto.nombre}</h2>`;
+                
+                if (producto.anticipo) {
+                    productoHTML += `<p>Anticipo: $${producto.anticipo}</p>`;
+                }
+
+                producto.cuotas.forEach(opcion => {
+                    if (opcion.monto <= amount) {
+                        productoHTML += `<p>${opcion.cuotas} cuotas: $${opcion.monto}</p>`;
+                        mostrarProducto = true;
+                    }
+                });
+
+                productoHTML += `</div>`;
+
+                if (mostrarProducto) {
+                    resultDiv.innerHTML += productoHTML;
+                }
+            });
+
+            if (resultDiv.innerHTML === '') {
+                resultDiv.innerHTML = '<p>No hay productos que cumplan con ese monto.</p>';
+            }
+        }
+    </script>
+
+
+
+
+    <script>
+          // Función para limpiar un campo específico
+        function limpiarCampo(campoId) {
+            document.getElementById(campoId).value = '';
+              document.getElementById('totalValue').value = total.toFixed(2);
+        }
+
+  
+        // Función para resetear toda la página
+        function resetearPagina() {
+            location.reload();  // Recarga la página desde el inicio
+        }
+
+          // Función para calcular el porcentaje del valor base
+        function calcularPorcentaje(porcentaje) {
+            // Obtener el valor base desde el primer campo
+            const valorBase = parseFloat(document.getElementById('precioVenta').value);
+
+            // Verificar que el valor base sea un número válido
+            if (isNaN(valorBase)) {
+                alert("Por favor, ingresa un número válido en la casilla 'precioVenta'");
+                return;
+            }
+
+            // Calcular el porcentaje
+            const resultado = (valorBase * porcentaje) / 100;
+
+            // Mostrar el resultado en el segundo campo
+            document.getElementById('anticipo').value = resultado;
+        }
+    </script>
+
+
+    <p style="font-size: small;">Programado por Dylan Ruiz.
+Inefable.
+Thais MB.
+Royal Prestige, Necochea.</p>
+
+
+</body></html></p>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <div id="contacto" class="seccion" style="display:none;">
+            <h1>Contacto</h1>
+            <p>Acá se podrá contactar con personas que comparten la agenda semanal.</p>
+            <ul>
+                <li>Contacto 1: <a href="mailto:contacto1@example.com">contacto1@example.com</a></li>
+                <li>Contacto 2: <a href="mailto:contacto2@example.com">contacto2@example.com</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección de Notas -->
+        <div id="notas" class="seccion" style="display:none;">
+            <h1>Notas Personales</h1>
+            <div id="contenedor-notas">
+                <div class="nota">
+                    <textarea placeholder="Escribe tu nota aquí..."></textarea>
+                </div>
+            </div>
+            <button id="agregar-nota">Agregar Nota</button>
+        </div>
+
+        <!-- Sección de Padlet -->
+        <div id="padlet" class="seccion" style="display:none;">
+
+            <!-- Puedes insertar el iframe del Padlet aquí -->
+            <iframe src="https://padlet.com/karendarocha1502/inducci-n-para-emprendedores-ho2tys8q9wny90ng" width="100%" height="500px" style="border:none;"></iframe>
+        </div>
+    </div>
+
+  <!-- Menú Deslizable: Agregar nuevas opciones -->
+<ul>
+    <!-- Opciones anteriores... -->
+    <li><a href="#" onclick="mostrarSeccion('padlet-negocio')">Padlet de Negocio</a></li>
+    <li><a href="#" onclick="mostrarSeccion('recursos')">Recursos</a></li>
+</ul>
+
+<!-- Sección de Padlet de Negocio -->
+<div id="padlet-negocio" class="seccion" style="display:none;">
+    <h1>Padlet de Negocio</h1>
+    <iframe src="https://padlet.com" width="100%" height="500px" style="border:none;"></iframe>
+</div>
+
+<!-- Sección de Recursos -->
+<div id="recursos" class="seccion" style="display:none;">
+    <h1>Recursos</h1>
+    <p>Aquí irán recursos.</p>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
